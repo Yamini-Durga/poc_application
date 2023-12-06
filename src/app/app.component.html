@@ -2,7 +2,7 @@
 <div class="chooseCur" *ngIf="codes.length > 0">
   <mat-form-field appearance="fill">
     <mat-label></mat-label>
-    <mat-select [(value)]="selectedCode">
+    <mat-select [(value)]="selectedCode" (selectionChange)="onSelectedCode($event)">
         <mat-option *ngFor="let code of codes" [value]="code.currencycode">
             {{ code.countryCode }}
         </mat-option>
